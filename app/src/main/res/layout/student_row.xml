@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,15 +13,13 @@
     android:transitionName="label"
     tools:targetApi="lollipop">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/logo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/space_50dp"
+        android:layout_height="@dimen/space_50dp"
+        android:elevation="@dimen/size5dp"
         android:layout_marginLeft="10dp"
-        android:background="@drawable/ring"
-        android:padding="12dp"
-        android:src="@drawable/claa_icon"
-        app:tint="@color/colorPrimary" />
+        android:src="@drawable/teju" />
 
     <ImageView
         android:id="@+id/logo1"

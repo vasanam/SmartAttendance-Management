@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartAttendance">
         <activity
+            android:name=".ProfessorSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfessorBarCodeGeneratorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfessorAttendanceList"
+            android:exported="false" />
+        <activity
+            android:name=".ProfessorStudentList"
+            android:exported="false" />
+        <activity
             android:name=".ProfessorClassListActivity"
             android:exported="false" />
         <activity

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_bg"
+    android:orientation="vertical"
+    tools:context=".ProfessorDashBoard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="@dimen/space_10dp">
+
+        <TextView
+            android:id="@+id/subLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Attendance list "
+            android:textColor="@color/text_sub"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Some class"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <info.hoang8f.android.segmented.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/att_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_10dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_below="@id/toolbar"
+        android:padding="@dimen/space_10dp"
+        android:visibility="visible"
+        segmentedgroup:sc_border_width="1dp"
+        segmentedgroup:sc_checked_text_color="@color/black"
+        segmentedgroup:sc_corner_radius="5dp"
+        segmentedgroup:sc_tint_color="@color/grey">
+
+        <RadioButton
+            android:id="@+id/present_btn"
+            style="@style/RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size30dp"
+            android:layout_weight="1"
+            android:text="Present"
+            android:checked="true"
+            android:textSize="@dimen/size16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/absent_btn"
+            style="@style/RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size30dp"
+            android:layout_weight="1"
+            android:text="Absent"
+            android:textSize="@dimen/size16sp"
+            android:textStyle="bold" />
+    </info.hoang8f.android.segmented.SegmentedGroup>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/attendanceRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/att_selector"
+        android:clipToPadding="false"
+        android:padding="@dimen/space_10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/menu_row" />
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="@dimen/size70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:id="@+id/changeDate"
+        android:src="@drawable/date"
+        android:layout_margin="@dimen/space_10dp"
+        android:theme="@style/FabTheme"
+        android:layout_height="@dimen/size70dp"/>
+
+</RelativeLayout>
